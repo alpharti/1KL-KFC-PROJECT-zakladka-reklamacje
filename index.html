@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <title>KFC</title>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Restauracje</a></li>
+      <li><a href="#">Ku(r)pony</a></li>
+      <li><a href="#">Gift card</a></li>
+      <li><button href="#" class="new">Nowości</button></li>
+      <li><a href="Reklamacje.html">Reklamacje</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Witamy w KFC</h1>
+    <p>Najlepsze jedzenie na wynos w mieście</p>
+    <input type="text" placeholder="Szukaj w menu...">
+  </main>
+<div class="slider">
+  <div class="slides">
+   <img src="images/burger.jpg.jpeg" alt="burger">
+   <img src="images/frytki.png" alt="frytki">
+    <img src="images/napój.png" alt="napój">
+    </div>
+</div>
+<script>
+  (function(){
+    // znajdź input w main
+    const input = document.querySelector('main input[type="text"]');
+    const slider = document.querySelector('.slider .slides') || document.querySelector('.slider');
+
+    if (!input || !slider) return;
+
+    // nadaj klasę do stylowania
+    input.classList.add('center-search');
+
+    // jeśli slider ma element .slides to wstaw pole nad nim (do .slider)
+    const target = document.querySelector('.slider');
+    target.appendChild(input); // przenosi input do .slider
+
+    // opcjonalnie utwórz przycisk wyszukiwania obok pola (jeśli chcesz)
+    // const btn = document.createElement('button');
+    // btn.type = 'button';
+    // btn.textContent = 'Szukaj';
+    // btn.className = 'slider-search-btn';
+    // target.appendChild(btn);
+
+    // opcjonalnie: obsługa Enter w polu -> przekierowanie do /search?q=...
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const q = (input.value || '').trim();
+        if (q) {
+          window.location.href = '/search?q=' + encodeURIComponent(q);
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html> 

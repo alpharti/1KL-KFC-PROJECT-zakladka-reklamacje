@@ -1,0 +1,121 @@
+
+nav {
+    border: 1px solid rgb(0, 255, 0); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;          
+  justify-content: flex-start; 
+  font-size: 20px;
+}
+
+.menu li {
+  margin-right: 20px;
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+button.new {
+  background-color: red;   
+  color: white;           
+  font-weight: bold;
+  border: none;            
+  padding: 5px 10px;    
+  cursor: pointer;         
+  font-size: 20px;
+   text-transform: uppercase;
+}
+
+button.new:hover {
+  background-color: darkred; 
+}
+main {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;     
+  justify-content: center; 
+  margin-top: 125px;     
+}
+.center-img {
+  display: block;       /* żeby działało margin auto */
+  margin: 20px auto;    /* auto = wyśrodkowanie w poziomie */
+  max-width: 400px;     /* ograniczenie szerokości */
+  height: auto;         /* zachowanie proporcji */
+}
+body {
+    width: 1440px;
+    align-items: center;
+    margin: auto;
+}
+.slider {
+  width: 600px;          /* szerokość slidera */
+  height: 400px;         /* wysokość slidera */
+  overflow: hidden;      /* ukrywa to, co poza ramką */
+  margin: 20px auto;     /* wyśrodkowanie */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slides {
+  display: flex;         /* zdjęcia obok siebie */
+  width: 100%;
+  animation: slide 9s infinite; /* animacja */
+}
+
+.slides img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;     /* dopasowanie zdjęcia */
+}
+
+/* animacja przesuwania */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-600px); }
+  66%  { transform: translateX(-1200px); }
+  100% { transform: translateX(0); }
+}
+/* Styl pola wyszukiwania po przeniesieniu do slidera */
+.slider { position: relative; }
+
+.slider .center-search {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 560px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+  background: #fff;
+  z-index: 5;
+}
+
+/* ew. styl przycisku, jeśli chcesz dodać obok niego */
+.slider .center-search + button {
+  position: absolute;
+  left: calc(50% + 50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* adaptacja dla węższych ekranów */
+@media (max-width: 480px) {
+  .slider .center-search { width: 90%; font-size: 15px; }
+}

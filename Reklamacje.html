@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Reklamacje - KFC</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .promo-box {
+      background: linear-gradient(90deg, #fff7f7 60%, #ffe5e5 100%);
+      border: 2px solid #ffcccc;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(255,0,0,0.10);
+      padding: 40px 32px;
+      max-width: 520px;
+      margin: 48px auto;
+      text-align: center;
+      position: relative;
+    }
+    .promo-box img {
+      width: 220px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+    }
+    .promo-box h2 {
+      color: #b30000;
+      font-size: 2.2em;
+      margin-bottom: 18px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    .promo-box p {
+      font-size: 1.25em;
+      color: #333;
+      margin-bottom: 28px;
+    }
+    .promo-box .new {
+      font-size: 1.3em;
+      padding: 16px 40px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #ff3333 60%, #b30000 100%);
+      box-shadow: 0 2px 8px rgba(255,0,0,0.10);
+      transition: background 0.2s;
+      margin-bottom: 8px;
+    }
+    .promo-box .new:hover {
+      background: linear-gradient(90deg, #b30000 60%, #ff3333 100%);
+    }
+    @media (max-width: 600px) {
+      .promo-box {
+        padding: 18px 8px;
+        max-width: 98vw;
+      }
+      .promo-box img {
+        width: 90vw;
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Menu</a></li>
+      <li><a href="#">Restauracje</a></li>
+      <li><a href="#">Ku(r)pony</a></li>
+      <li><a href="#">Gift card</a></li>
+      <li><button href="#" class="new">Nowości</button></li>
+      <li><a href="Reklamacje.html">Reklamacje</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="promo-box">
+      <img src="images/burger.jpg.jpeg" alt="Burger KFC">
+      <h2>Spróbuj naszego nowego BURGERA!</h2>
+      <p>Soczyste mięso, chrupiąca bułka, świeże dodatki – odkryj smak, który pokochasz.<br>
+      Zamów już dziś i poczuj prawdziwą przyjemność z jedzenia!</p>
+      <button class="new" onclick="window.location.href='index.html'">Zamów teraz</button>
+    </div>
+  </main>
+</body>
+</html>
